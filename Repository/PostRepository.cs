@@ -32,4 +32,24 @@ public class PostRepository : Repository<Post>, IPostRepository
     {
         return _dbSet.AsNoTracking();
     }
+
+    public async Task<IEnumerable<Post>> GetFilteredPostsAsync(int page, int pageSize, IEnumerable<IPostFilterStrategy> filters, CancellationToken ct = default)
+    {
+        IQueryable<Post> query = _dbSet
+            .Include(p => p.Comments)
+            .Include(p => p.Tags)
+            .Include(p => p.Author);
+
+        foreach (var filter in filters)
+        {
+            query = filter.Apply(query);
+        }
+
+        return await query
+            .OrderByDescending(p => p.PublishedAt)
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .AsNoTracking()
+            .ToListAsync(ct);
+    }
 }

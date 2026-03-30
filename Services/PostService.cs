@@ -6,8 +6,19 @@ using Repository;
 
 public class PostService(IPostRepository postRepo, ITagRepository tagRepo, IAuthorRepository authorRepo) : IPostService
 {
-    public async Task<IEnumerable<Post>> ListPostsAsync(int page, int pageSize, CancellationToken ct = default) =>
-        await postRepo.GetPostsWithCommentsAsync(page, pageSize, ct);
+    public async Task<IEnumerable<Post>> ListPostsAsync(PostQueryParameters qp, CancellationToken ct = default)
+    { 
+        var filters = new List<IPostFilterStrategy>();
+
+        if (qp.AuthorId.HasValue)
+            filters.Add(new FilterByAuthor(qp.AuthorId.Value));
+        if (!string.IsNullOrEmpty(qp.Tag))
+            filters.Add(new FilterByTag(qp.Tag));
+        if (qp.From.HasValue && qp.To.HasValue)
+            filters.Add(new FilterByDateRange(qp.From.Value, qp.To.Value));
+
+        return await postRepo.GetFilteredPostsAsync(qp.Page, qp.PageSize, filters, ct);
+    }
 
     public async Task<Post?> GetPostAsync(int id, CancellationToken ct = default) =>
         await postRepo.GetPostWithCommentsAsync(id, ct);

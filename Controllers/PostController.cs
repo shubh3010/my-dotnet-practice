@@ -19,7 +19,7 @@ public class PostController: ControllerBase
     [HttpGet]
     public async Task<IActionResult> Get([FromQuery] PostQueryParameters queryParameters, CancellationToken ct = default)
     {
-        var posts = await _postService.ListPostsAsync(queryParameters.Page, queryParameters.PageSize, ct);
+        var posts = await _postService.ListPostsAsync(queryParameters, ct);
         return Ok(posts);
     }
     

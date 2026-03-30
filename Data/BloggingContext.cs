@@ -6,10 +6,7 @@ namespace Repository;
 
 public class BloggingContext : DbContext
 {
-    public BloggingContext(DbContextOptions<BloggingContext> options) : base(options)
-    {
-        
-    }
+    public BloggingContext(DbContextOptions<BloggingContext> options) : base(options) { }
     
     public DbSet<Post> Posts => Set<Post>();
     public DbSet<Author> Authors => Set<Author>();

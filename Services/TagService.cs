@@ -99,8 +99,7 @@ public class TagService : ITagService
     public async Task ReplaceTagsForPostAsync(int postId, List<int> tagIds)
     {
         var post = await _postRepository.GetByIdAsync(postId);
-
-
+        
         if (post == null) throw new ArgumentException("Post not found");
         
         post.Tags.Clear();

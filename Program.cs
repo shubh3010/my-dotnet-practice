@@ -7,11 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
+    builder.Services.AddDbContext<BloggingContext>(options => options.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddDbContext<BloggingContext>(options =>
-    options.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-    
     builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
     builder.Services.AddScoped<IPostRepository, PostRepository>();
     builder.Services.AddScoped<IAuthorRepository, AuthorRepository>();
@@ -20,8 +17,7 @@ builder.Services.AddDbContext<BloggingContext>(options =>
     builder.Services.AddScoped<IAuthorService,AuthorService>();
 
     builder.Services.AddScoped<ITagRepository, TagRepository>();
-    builder.Services.AddScoped<ITagService,TagService>();
-
+    builder.Services.AddScoped<ITagService, TagService>();
 
     builder.Services.AddEndpointsApiExplorer();
 
