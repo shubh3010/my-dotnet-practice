@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\BlogPractice.props" />
-</Project>
