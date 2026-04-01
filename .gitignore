@@ -1,0 +1,20 @@
+# Build output
+bin/
+obj/
+
+# Visual Studio / Rider / user-specific files
+.vs/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.DotSettings.user
+
+# OS-generated files
+Thumbs.db
+.DS_Store
+
+# Keep shared VS Code workspace config, but ignore local-only VS Code files
+.vscode/*
+!.vscode/mcp.json

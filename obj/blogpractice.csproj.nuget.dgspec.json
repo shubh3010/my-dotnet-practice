@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\study\\BlogPractice\\blogpractice.csproj": {}
+    "C:\\study\\BlogPractice\\BlogPractice.csproj": {}
   },
   "projects": {
-    "C:\\study\\BlogPractice\\blogpractice.csproj": {
+    "C:\\study\\BlogPractice\\BlogPractice.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\study\\BlogPractice\\blogpractice.csproj",
-        "projectName": "blogpractice",
-        "projectPath": "C:\\study\\BlogPractice\\blogpractice.csproj",
+        "projectUniqueName": "C:\\study\\BlogPractice\\BlogPractice.csproj",
+        "projectName": "BlogPractice",
+        "projectPath": "C:\\study\\BlogPractice\\BlogPractice.csproj",
         "packagesPath": "C:\\Users\\ShubhGujare\\.nuget\\packages\\",
         "outputPath": "C:\\study\\BlogPractice\\obj\\",
         "projectStyle": "PackageReference",

@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "blogpractice/1.0.0": {
+      "BlogPractice/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Design": "9.0.0",
           "Microsoft.EntityFrameworkCore.Proxies": "8.0.0",
@@ -15,7 +15,7 @@
           "Swashbuckle.AspNetCore": "10.0.1"
         },
         "runtime": {
-          "blogpractice.dll": {}
+          "BlogPractice.dll": {}
         }
       },
       "Azure.Core/1.38.0": {
@@ -1117,7 +1117,7 @@
     }
   },
   "libraries": {
-    "blogpractice/1.0.0": {
+    "BlogPractice/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

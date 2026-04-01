@@ -1,0 +1,8 @@
+{
+  "servers": {
+    "blog-api": {
+      "command": "dotnet",
+      "args": ["run", "--project", "c:\\study\\BlogPractice\\BlogMcpServer\\BlogMcpServer.csproj"]
+    }
+  }
+}

@@ -21,4 +21,12 @@
     <Folder Include="Migrations\" />
   </ItemGroup>
 
+  <!-- Exclude the BlogMcpServer sub-project so its files aren't compiled by this project -->
+  <ItemGroup>
+    <Compile Remove="BlogMcpServer\**" />
+    <Content Remove="BlogMcpServer\**" />
+    <EmbeddedResource Remove="BlogMcpServer\**" />
+    <None Remove="BlogMcpServer\**" />
+  </ItemGroup>
+
 </Project>
